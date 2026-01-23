@@ -1,3 +1,17 @@
+:root {
+    --theme: rgba(255, 255, 255, 0.7);
+    --textTheme: black;
+    --placeholderTheme: #888;
+    --borderTheme: 1px solid transparent;
+    --menuColor: rgba(0, 147, 203, 0.65);
+    --buttonColor: #0074ff;
+    --hoverButtonColor: #0056b3;
+    --hoverTextColor: aliceblue;
+    --topMenu: #09191f;
+    --textMenu: #09191f;
+    --altRow: 'rgba(0, 0, 0, 0.05)';
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +49,23 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+
+  background-image: url("/public/Images/backgroundImage.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+
+  transition: background-image 0.3s ease;
 }
