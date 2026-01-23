@@ -169,7 +169,8 @@ const RegisterPage = ({ setToken }) => {
       const app = params.get("app") || "studio";
 
       const redirects = {
-        studio: "https://studio.lancherix.com"
+        studio: "https://studio.lancherix.com",
+        kiara: "http://localhost:3000",
       };
 
       const redirectBase = redirects[app];
