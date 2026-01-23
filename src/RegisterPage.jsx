@@ -140,11 +140,7 @@ const RegisterPage = ({ setToken }) => {
             country,
             language,
             themeMode,
-            agreements: {
-              privacyPolicy,
-              cookies,
-              notifications
-            },
+            agreements: { privacyPolicy, cookies, notifications },
             password,
             confirmPassword
           })
@@ -168,23 +164,20 @@ const RegisterPage = ({ setToken }) => {
 
       const loginData = await login.json();
 
+      // 🚀 REDIRECT LIMPIO (NO POPUP)
       const params = new URLSearchParams(window.location.search);
       const app = params.get("app") || "studio";
 
-      if (window.opener) {
-        window.opener.postMessage(
-          {
-            type: "LANCHERIX_AUTH_SUCCESS",
-            token: loginData.token,
-            app
-          },
-          "*"
-        );
+      const redirects = {
+        studio: "https://studio.lancherix.com"
+      };
 
-        window.close();
-      } else {
-        setError("serverError");
-      }
+      const redirectBase = redirects[app];
+      if (!redirectBase) return setError("serverError");
+
+      window.location.href =
+        `${redirectBase}/auth/callback?token=${loginData.token}`;
+
     } catch (err) {
       console.error(err);
       setError("serverError");
