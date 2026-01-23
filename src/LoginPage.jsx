@@ -35,27 +35,23 @@ const LoginPage = () => {
         return;
       }
 
-      // 🔁 app que pidió el login (studio por defecto)
       const params = new URLSearchParams(window.location.search);
       const app = params.get("app") || "studio";
 
-      // 🌍 destinos permitidos
-      const appRedirects = {
+      const redirects = {
         studio: "https://studio.lancherix.com",
-        // future apps 👇
-        // docs: "https://docs.lancherix.com"
       };
 
-      const redirectUrl = appRedirects[app];
+      const redirectBase = redirects[app];
 
-      if (!redirectUrl) {
-        setError("Unknown application");
+      if (!redirectBase) {
+        setError("Invalid app");
         return;
       }
 
-      // 🚀 REDIRECT NORMAL (no popup)
+      // 🚀 redirect limpio
       window.location.href =
-        `${redirectUrl}/auth/callback?token=${data.token}`;
+        `${redirectBase}/auth/callback?token=${data.token}`;
 
     } catch (err) {
       console.error("Login error:", err);
@@ -73,6 +69,7 @@ const LoginPage = () => {
         <img className="logo-loginPage" src={Logo} alt="Lancherix" />
 
         <form onSubmit={handleSubmit}>
+
           <div className="content-registerPage">
             <div className="input-registerPage">
               <input
@@ -80,37 +77,32 @@ const LoginPage = () => {
                 placeholder="Username or Email"
                 value={identifier}
                 onChange={(e) => setIdentifier(e.target.value)}
-                className="inputUsername-loginPage"
+                className='inputUsername-loginPage'
                 spellCheck="false"
               />
             </div>
 
             <div className="input-registerPage">
               <input
-                type={showPassword ? "text" : "password"}
+                type={showPassword ? 'text' : 'password'}
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="inputPassword-loginPage"
+                className='inputPassword-loginPage'
                 spellCheck="false"
               />
               {password && (
-                <span
-                  className="toggle-loginPage"
-                  onClick={togglePasswordVisibility}
-                >
-                  {showPassword ? "Hide" : "Show"}
+                <span className="toggle-loginPage" onClick={togglePasswordVisibility}>
+                  {showPassword ? 'Hide' : 'Show'}
                 </span>
               )}
             </div>
           </div>
 
-          {error && <div className="error-registerPage">{error}</div>}
+          {error && <div className='error-registerPage'>{error}</div>}
 
           <div className="login-navigation">
-            <button type="submit" className="login-navigationprimary-btn">
-              Login
-            </button>
+            <button type="submit" className="login-navigationprimary-btn">Login</button>
             <p>
               You don't have an account?{" "}
               <button
