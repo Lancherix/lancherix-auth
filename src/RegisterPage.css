@@ -352,4 +352,31 @@
         margin: 1vh 0 2vh 0;
         max-width: 50vw;
     }
+
+    .register-navigationprimary-btn {
+    background: linear-gradient(#428cef, #1169d3);
+    color: white;
+    padding: 0.7vh 0.7vw;
+    border-radius: 6px;
+    border: 1px solid #1164c9;
+    width: 15vw;
+    cursor: pointer;
+    transition:
+        background 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.05s ease;
+}
+
+.register-navigationsecondary-btn {
+    background: linear-gradient(#faf8fb, #e0dfe3);
+    padding: 0.7vh 0.7vw;
+    border-radius: 6px;
+    border: 1px solid #d5d4d8;
+    width: 15vw;
+    cursor: pointer;
+    transition:
+        background 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.05s ease;
+}
 }
