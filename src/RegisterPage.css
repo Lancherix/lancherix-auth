@@ -334,4 +334,12 @@
     text-align: center;
   }
 
+  .logo-loginPage {
+    width: 40vw !important;
+    margin-bottom: 3vh !important;
+  }
+
+  .login-navigation p {
+    font-size: 0.9rem;
+  }
 }
