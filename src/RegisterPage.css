@@ -307,44 +307,49 @@
 }
 
 .link-registerPage {
-  background: none;
-  border: none;
-  padding: 0;
-  font: inherit;
-  text-decoration: none;
-  cursor: pointer;
-  color: #0074ff;
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    color: #0074ff;
 }
 
 .link-registerPage:hover {
-  text-decoration: underline;
-  cursor: pointer;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {
 
-  .main-registerPage {
-    display: flex;
-    flex-direction: column;
-    width: 70vw;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 10px;
-    padding: 5vw;
-    align-items: center;
-    text-align: center;
-  }
+    .main-registerPage {
+        display: flex;
+        flex-direction: column;
+        width: 70vw;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 10px;
+        padding: 5vw;
+        align-items: center;
+        text-align: center;
+    }
 
-  .logo-loginPage {
-    width: 40vw !important;
-    margin-bottom: 3vh !important;
-  }
+    .logo-loginPage {
+        width: 40vw !important;
+        margin-bottom: 3vh !important;
+    }
 
-  .login-navigation p {
-    font-size: 0.9rem;
-  }
+    .login-navigation p {
+        font-size: 0.9rem;
+    }
 
-  .main-registerPage img {
-    width: 40vw;
-    margin-bottom: 1vh;
-}
+    .main-registerPage img {
+        width: 40vw;
+        margin-bottom: 1vh;
+    }
+
+    .intro-registerPage svg {
+        margin: 1vh 0 2vh 0;
+        max-width: 50vw;
+    }
 }
