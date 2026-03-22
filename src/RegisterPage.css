@@ -320,3 +320,18 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+
+  .main-registerPage {
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 5vw;
+    align-items: center;
+    text-align: center;
+  }
+
+}
