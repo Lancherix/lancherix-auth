@@ -342,4 +342,9 @@
   .login-navigation p {
     font-size: 0.9rem;
   }
+
+  .main-registerPage img {
+    width: 40vw;
+    margin-bottom: 3vh;
+}
 }
