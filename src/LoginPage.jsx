@@ -40,7 +40,7 @@ const LoginPage = () => {
 
       const redirects = {
         studio: "https://studio.lancherix.com",
-        kiara: "http://localhost:3000",
+        labs: "http://localhost:3000",
       };
 
       const redirectBase = redirects[app];
