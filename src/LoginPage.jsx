@@ -40,7 +40,7 @@ const LoginPage = () => {
 
       const redirects = {
         studio: "https://studio.lancherix.com",
-        labs: "http://localhost:3000",
+        labs: "https://labs.lancherix.com",
       };
 
       const redirectBase = redirects[app];
