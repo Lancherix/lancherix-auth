@@ -357,6 +357,62 @@ const RegisterPage = ({ setToken }) => {
         serverError: "Erreur du serveur",
         usernameOrEmailTaken: "Votre nom d'utilisateur ou e-mail est déjà utilisé.",
       }
+    },
+    "ru-RU": {
+      appearance: { title: "Выберите тему", description: "Это можно изменить позже в настройках." },
+      personal: {
+        title: "Личная информация",
+        description: "Это поможет нам персонализировать ваш опыт.",
+        firstNamePlaceholder: "Имя",
+        lastNamePlaceholder: "Фамилия (необязательно)",
+        birthdayLabel: "Дата рождения",
+        month: "Месяц",
+        day: "День",
+        year: "Год",
+        gender: "Пол",
+        male: "Мужской",
+        female: "Женский",
+        preferNotToSay: "Не указывать"
+      },
+      account: {
+        title: "Личность и контакты",
+        description: "Выберите уникальное имя пользователя и email.",
+        usernamePlaceholder: "Имя пользователя",
+        emailPlaceholder: "Email"
+      },
+      security: {
+        title: "Защита аккаунта",
+        description: "Это поможет обезопасить данные вашего аккаунта.",
+        passwordPlaceholder: "Пароль",
+        confirmPasswordPlaceholder: "Подтвердите пароль",
+        show: "Показать",
+        hide: "Скрыть"
+      },
+      agreements: {
+        title: "Конфиденциальность и настройки",
+        description: "Согласие и настройки уведомлений.",
+        privacy: "Я согласен с Политикой конфиденциальности",
+        cookies: "Разрешить использование Cookie",
+        notifications: "Получать уведомления"
+      },
+      buttons: { start: "Начать", next: "Далее", back: "Назад", create: "Создать" },
+      alreadyHaveAccount: "Уже есть аккаунт? ",
+      signIn: "Войти",
+      theme: { light: "Светлая", dark: "Тёмная", glass: "Стекло" },
+      errors: {
+        selectRegionLanguage: "Пожалуйста, выберите страну и язык.",
+        completePersonalInfo: "Пожалуйста, заполните все обязательные личные данные.",
+        completeAccountInfo: "Пожалуйста, заполните данные аккаунта.",
+        usernameInvalid: "Имя пользователя должно содержать от 1 до 20 символов: строчные латинские буквы, цифры, точки или подчёркивания.",
+        emailInvalid: "Неверный формат email.",
+        enterPassword: "Пожалуйста, введите пароль.",
+        passwordInvalid: "Пароль должен содержать не менее 6 символов и хотя бы одну цифру.",
+        passwordMismatch: "Пароли не совпадают.",
+        privacyPolicyRequired: "Вы должны принять Политику конфиденциальности.",
+        registrationFailed: "Ошибка регистрации",
+        serverError: "Ошибка сервера",
+        usernameOrEmailTaken: "Это имя пользователя или email уже используется."
+      }
     }
   };
 
@@ -445,6 +501,7 @@ const RegisterPage = ({ setToken }) => {
                     <option value="en-US">English</option>
                     <option value="es-CO">Español</option>
                     <option value="fr-FR">Français</option>
+                    <option value="ru-RU">Русский</option>
                   </select>
                 </div>
               </div>
@@ -697,7 +754,7 @@ const RegisterPage = ({ setToken }) => {
                 type="button"
                 onClick={prevStep}
               >
-                {language === "es-CO" ? "Atrás" : language === "fr-FR" ? "Retour" : "Back"}
+                {translations[language].buttons.back}
               </button>
             )}
 
@@ -707,7 +764,7 @@ const RegisterPage = ({ setToken }) => {
                 type="button"
                 onClick={nextStep}
               >
-                {language === "es-CO" ? "Comenzar" : language === "fr-FR" ? "Commencer" : "Start"}
+                {translations[language].buttons.start}
               </button>
             )}
 
@@ -717,13 +774,13 @@ const RegisterPage = ({ setToken }) => {
                 type="button"
                 onClick={nextStep}
               >
-                {language === "es-CO" ? "Siguiente" : language === "fr-FR" ? "Suivant" : "Next"}
+                {translations[language].buttons.next}
               </button>
             )}
 
             {step === 7 && (
               <button className="register-navigationprimary-btn" type="submit">
-                {language === "es-CO" ? "Crear" : language === "fr-FR" ? "Créer" : "Create"}
+                {translations[language].buttons.create}
               </button>
             )}
           </div>
