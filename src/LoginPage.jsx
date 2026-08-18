@@ -41,7 +41,7 @@ const LoginPage = () => {
       const redirects = {
         studio: "https://studio.lancherix.com",
         labs: "https://labs.lancherix.com",
-        card: "http://localhost:3000",
+        card: "https://card.lancherix.com/",
       };
 
       const redirectBase = redirects[app];

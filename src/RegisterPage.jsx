@@ -171,6 +171,7 @@ const RegisterPage = ({ setToken }) => {
       const redirects = {
         studio: "https://studio.lancherix.com",
         labs: "https://labs.lancherix.com",
+        card: "https://card.lancherix.com/",
       };
 
       const redirectBase = redirects[app];
