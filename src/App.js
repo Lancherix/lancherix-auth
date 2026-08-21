@@ -4,6 +4,8 @@ import LoginPage from "./LoginPage";
 import RegisterPage from "./RegisterPage";
 import "./App.css";
 
+import symbol from './Artwork/symbolBlue.png';
+
 export default function App() {
   const [loading, setLoading] = useState(true);
 
